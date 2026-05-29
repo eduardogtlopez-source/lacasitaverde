@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es-GT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Casita Verde · Te presta pisto | Préstamos en Santa Rosa y Jutiapa</title>
+<meta name="description" content="Préstamos rápidos, transparentes y seguros desde Q3,500. Financiamiento para remodelar, comprar o lo que necesités. Cobertura en Santa Rosa y Jutiapa. Escribinos por WhatsApp." />
+<meta property="og:title" content="La Casita Verde · Te presta pisto" />
+<meta property="og:description" content="Préstamos rápidos, transparentes y seguros desde Q3,500. Financiamiento para lo que necesités." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_GT" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231f7a43' d='M50 12 12 44h12v40h52V44h12zM38 58h24v26H38z'/%3E%3Crect x='44' y='30' width='12' height='12' fill='%231f7a43'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green-900:#0f3d23;
+    --green-800:#14532d;
+    --green-700:#1f7a43;
+    --green-600:#27924f;
+    --lime:#8bc34a;
+    --lime-bright:#a8e05a;
+    --lime-tint:#eef7df;
+    --lime-tint-2:#f6fbec;
+    --ink:#16241b;
+    --muted:#5c6b61;
+    --line:#e4ebe3;
+    --white:#ffffff;
+    --shadow:0 18px 50px -18px rgba(15,61,35,.35);
+    --shadow-sm:0 6px 22px -10px rgba(15,61,35,.30);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.font-head{font-family:'Poppins',sans-serif;line-height:1.15}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1140px,92%);margin-inline:auto}
+  .eyebrow{
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--green-600);
+  }
+  section{padding:clamp(56px,8vw,104px) 0}
+  .section-head{max-width:680px;margin:0 auto clamp(36px,5vw,56px);text-align:center}
+  .section-head h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;color:var(--green-800);margin:.5rem 0 .65rem}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;justify-content:center;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+    padding:.92rem 1.6rem;border-radius:999px;border:2px solid transparent;
+    cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-wa{background:#25d366;color:#063d1c;box-shadow:0 10px 28px -10px rgba(37,211,102,.7)}
+  .btn-wa:hover{background:#1fc25c}
+  .btn-primary{background:linear-gradient(95deg,var(--green-700),var(--lime));color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-outline{background:transparent;border-color:var(--green-700);color:var(--green-800)}
+  .btn-outline:hover{background:var(--green-700);color:#fff}
+  .btn-light{background:#fff;color:var(--green-800)}
+
+  /* Nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+  .brand{display:flex;align-items:center;gap:.6rem}
+  .brand img{height:52px;width:auto;border-radius:10px}
+  .nav-links{display:flex;align-items:center;gap:1.6rem}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--ink);opacity:.85}
+  .nav-links a:hover{opacity:1;color:var(--green-700)}
+  .nav-cta{display:flex;align-items:center;gap:.6rem}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.3rem}
+  .nav-toggle span{display:block;width:26px;height:3px;background:var(--green-800);border-radius:3px;margin:5px 0;transition:.2s}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,var(--green-900) 0%,var(--green-700) 48%,var(--lime) 120%);color:#fff;padding:clamp(48px,7vw,84px) 0 clamp(64px,8vw,110px)}
+  .hero .blob{position:absolute;border-radius:999px;filter:blur(2px);opacity:.5;pointer-events:none}
+  .hero .blob.b1{width:340px;height:120px;background:linear-gradient(90deg,var(--lime-bright),transparent);top:-30px;right:-60px;transform:rotate(-18deg)}
+  .hero .blob.b2{width:260px;height:90px;background:linear-gradient(90deg,var(--lime-bright),transparent);bottom:40px;left:-80px;transform:rotate(12deg);opacity:.35}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,64px);align-items:center}
+  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:.4rem .9rem;border-radius:999px;font-size:.82rem;font-weight:600;backdrop-filter:blur(4px)}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;margin:1.1rem 0 1rem;letter-spacing:-.01em}
+  .hero h1 .hl{color:var(--lime-bright)}
+  .hero p.lead{font-size:clamp(1.05rem,2.2vw,1.25rem);max-width:32ch;color:rgba(255,255,255,.92)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:1.2rem 1.6rem;margin-top:2rem;font-size:.92rem}
+  .hero-trust span{display:flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.95);font-weight:500}
+  .hero-trust svg{flex:none}
+
+  /* Form card */
+  .form-card{background:#fff;color:var(--ink);border-radius:22px;padding:clamp(22px,3vw,30px);box-shadow:var(--shadow)}
+  .form-card h3{font-size:1.3rem;font-weight:700;color:var(--green-800)}
+  .form-card .sub{font-size:.92rem;color:var(--muted);margin:.25rem 0 1.1rem}
+  .field{margin-bottom:.85rem}
+  .field label{display:block;font-size:.82rem;font-weight:600;color:var(--green-800);margin-bottom:.3rem}
+  .field input,.field select,.field textarea{
+    width:100%;padding:.72rem .9rem;border:1.5px solid var(--line);border-radius:12px;
+    font-family:inherit;font-size:.95rem;color:var(--ink);background:#fbfdfa;transition:border .15s,box-shadow .15s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green-600);box-shadow:0 0 0 3px rgba(39,146,79,.15)}
+  .form-card .btn{width:100%;margin-top:.4rem}
+  .form-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.7rem}
+
+  /* Trust strip */
+  .strip{background:var(--green-900);color:#fff}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2.6rem;padding:1.1rem 0}
+  .strip .item{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.98rem}
+  .strip .item b{color:var(--lime-bright)}
+
+  /* Feature cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green-700),var(--lime));margin-bottom:1rem}
+  .card h3{font-size:1.18rem;font-weight:700;color:var(--green-800);margin-bottom:.4rem}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* Loan types */
+  .loans{background:var(--lime-tint-2)}
+  .loan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  .loan{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1px solid var(--line);text-align:center;transition:transform .18s,box-shadow .18s}
+  .loan:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .loan .emoji{font-size:2rem}
+  .loan h3{font-size:1.1rem;color:var(--green-800);margin:.6rem 0 .35rem;font-weight:700}
+  .loan p{font-size:.9rem;color:var(--muted)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;counter-reset:step}
+  .step{position:relative;background:linear-gradient(160deg,#fff,var(--lime-tint));border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.6rem 1.6rem;box-shadow:var(--shadow-sm)}
+  .step .num{counter-increment:step;position:absolute;top:-22px;left:1.6rem;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--green-700),var(--lime));color:#fff;display:grid;place-items:center;font-family:'Poppins';font-weight:800;font-size:1.25rem;box-shadow:var(--shadow-sm)}
+  .step .num::before{content:counter(step)}
+  .step h3{font-size:1.15rem;color:var(--green-800);margin:.4rem 0 .4rem;font-weight:700}
+  .step p{color:var(--muted);font-size:.96rem}
+
+  /* Coverage */
+  .coverage{background:linear-gradient(125deg,var(--green-800),var(--green-700));color:#fff}
+  .cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+  .cov-grid h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:.8rem}
+  .cov-grid p{color:rgba(255,255,255,.9);margin-bottom:1.4rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.7rem}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:.55rem 1.1rem;border-radius:999px;font-weight:600;font-size:.95rem;backdrop-filter:blur(4px)}
+  .cov-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:1.8rem;backdrop-filter:blur(6px)}
+  .cov-card .big{font-family:'Poppins';font-weight:800;font-size:2.6rem;color:var(--lime-bright);line-height:1}
+  .cov-card .lbl{font-size:.95rem;color:rgba(255,255,255,.9);margin-top:.3rem}
+  .cov-card hr{border:0;border-top:1px solid rgba(255,255,255,.2);margin:1.2rem 0}
+
+  /* Final CTA */
+  .final{background:var(--lime-tint);text-align:center}
+  .final h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--green-800);margin-bottom:.7rem}
+  .final p{color:var(--muted);font-size:1.1rem;max-width:48ch;margin:0 auto 1.8rem}
+  .final .btns{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+
+  /* Footer */
+  footer{background:var(--green-900);color:rgba(255,255,255,.85);padding:clamp(48px,6vw,72px) 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.2rem;margin-bottom:2.4rem}
+  footer .brand img{height:64px;border-radius:10px;background:#fff;padding:4px}
+  footer h4{font-family:'Poppins';color:#fff;font-size:1rem;margin-bottom:.9rem;font-weight:700}
+  footer a,footer p{font-size:.95rem;margin-bottom:.5rem}
+  footer a:hover{color:var(--lime-bright)}
+  .foot-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
+  .legal{border-top:1px solid rgba(255,255,255,.15);padding-top:1.4rem;font-size:.8rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.6}
+
+  /* Floating WhatsApp */
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#25d366;color:#fff;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.8);transition:transform .15s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px}
+
+  /* Responsive */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .loan-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+    .step{margin-top:14px}
+    .cov-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;padding:1rem 6%;gap:1rem;border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .nav-toggle{display:block}
+    .nav-cta .btn-text{display:none}
+    .cards{grid-template-columns:1fr}
+    .loan-grid{grid-template-columns:1fr 1fr}
+    .strip .wrap{gap:.8rem 1.4rem}
+    .strip .item{font-size:.88rem}
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#inicio" aria-label="La Casita Verde">
+      <img src="assets/logo.jpg" alt="La Casita Verde - Te presta pisto" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#prestamos">Préstamos</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#solicitar">Solicitar</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-wa" href="https://wa.me/50239988424?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20un%20pr%C3%A9stamo%20de%20La%20Casita%20Verde" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="btn-text">WhatsApp</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-badge">🏡 Préstamos en Santa Rosa y Jutiapa</span>
+      <h1>Te presta pisto, <span class="hl">sin complicaciones</span></h1>
+      <p class="lead">Financiamiento rápido, transparente y seguro desde <strong>Q3,500</strong>. Para remodelar, comprar o lo que necesités.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" href="https://wa.me/50239988424?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20pr%C3%A9stamo%20de%20La%20Casita%20Verde" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+        <a class="btn btn-light" href="#solicitar">Solicitar en línea</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8e05a" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Respuesta rápida</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8e05a" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Sin trámites engorrosos</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8e05a" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Trato claro y honesto</span>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="solicitar">
+      <h3>Solicitá tu préstamo</h3>
+      <p class="sub">Llená tus datos y te contactamos por WhatsApp. ¡Es gratis y sin compromiso!</p>
+      <form id="leadForm">
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej. 3998-8424" required />
+        </div>
+        <div class="field">
+          <label for="monto">¿Cuánto necesitás? (Q)</label>
+          <input type="text" id="monto" name="monto" placeholder="Ej. Q10,000" />
+        </div>
+        <div class="field">
+          <label for="ubicacion">¿De dónde nos escribís?</label>
+          <select id="ubicacion" name="ubicacion">
+            <option value="" selected>Seleccioná tu municipio</option>
+            <option>Cuilapa</option>
+            <option>Barberena</option>
+            <option>Jalpatagua</option>
+            <option>Taxisco</option>
+            <option>Chiquimulilla</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar solicitud por WhatsApp</button>
+        <p class="form-note">Al enviar se abrirá WhatsApp con tus datos listos. 🔒</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item">💸 Préstamos desde <b>Q3,500</b></div>
+    <div class="item">⚡ Trámite <b>rápido</b></div>
+    <div class="item">🤝 100% <b>transparente</b></div>
+    <div class="item">📍 <b>Santa Rosa</b> y <b>Jutiapa</b></div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section id="beneficios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Por qué La Casita Verde</span>
+      <h2>Financiamiento fácil, rápido y seguro</h2>
+      <p>Hacemos que conseguir tu pisto sea sencillo. Sin letra chiquita, sin vueltas y con un trato cercano de verdad.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Rápido</h3>
+        <p>Te respondemos pronto y agilizamos tu solicitud para que tengás tu dinero cuando lo necesités.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Transparente</h3>
+        <p>Te explicamos todo con claridad: montos, plazos y condiciones. Nada escondido, nada de sorpresas.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <h3>Seguro</h3>
+        <p>Somos un respaldo confiable y serio. Tu tranquilidad y tu información están protegidas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOAN TYPES -->
+<section class="loans" id="prestamos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros préstamos</span>
+      <h2>Para lo que necesités</h2>
+      <p>Financiamiento a tu medida desde Q3,500. Vos nos contás para qué lo querés y nosotros te ayudamos.</p>
+    </div>
+    <div class="loan-grid">
+      <div class="loan">
+        <div class="emoji">🏠</div>
+        <h3>Hipotecario</h3>
+        <p>Compra o financia tu casa con tu propiedad como respaldo.</p>
+      </div>
+      <div class="loan">
+        <div class="emoji">🔨</div>
+        <h3>Remodelación</h3>
+        <p>Arreglá, amplía o mejorá tu hogar como siempre quisiste.</p>
+      </div>
+      <div class="loan">
+        <div class="emoji">🌱</div>
+        <h3>Segunda vivienda</h3>
+        <p>Invertí en ese terreno o propiedad que tanto te conviene.</p>
+      </div>
+      <div class="loan">
+        <div class="emoji">💵</div>
+        <h3>Liquidez</h3>
+        <p>El pisto que necesités para lo que sea, de forma confiable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="como">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Así de fácil</span>
+      <h2>Cómo funciona</h2>
+      <p>En tres pasos sencillos estás más cerca de tu pisto.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num"></div>
+        <h3>Solicitá</h3>
+        <p>Llená el formulario o escribinos por WhatsApp. Contanos cuánto necesitás y para qué.</p>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <h3>Te contactamos</h3>
+        <p>Revisamos tu caso y te explicamos las condiciones con total claridad, sin compromiso.</p>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <h3>Recibí tu pisto</h3>
+        <p>Una vez aprobado, recibís tu préstamo de forma rápida y segura. ¡Listo!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="cobertura">
+  <div class="wrap cov-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--lime-bright)">Dónde estamos</span>
+      <h2>Cobertura en Santa Rosa y Jutiapa</h2>
+      <p>Llegamos a las áreas urbanas y rurales donde más se necesita un respaldo financiero cercano y de confianza.</p>
+      <div class="chips">
+        <span class="chip">Cuilapa</span>
+        <span class="chip">Barberena</span>
+        <span class="chip">Jalpatagua</span>
+        <span class="chip">Taxisco</span>
+        <span class="chip">Chiquimulilla</span>
+      </div>
+    </div>
+    <div class="cov-card">
+      <div class="big">Q3,500+</div>
+      <div class="lbl">Préstamos desde este monto</div>
+      <hr />
+      <div class="big">5</div>
+      <div class="lbl">Municipios con cobertura</div>
+      <hr />
+      <div class="big">100%</div>
+      <div class="lbl">Trato transparente y seguro</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>¿Necesitás un préstamo?</h2>
+    <p>Escribinos hoy mismo y dejá que La Casita Verde te preste pisto, de forma fácil y sin complicaciones.</p>
+    <div class="btns">
+      <a class="btn btn-wa" href="https://wa.me/50239988424?text=Hola%2C%20quiero%20solicitar%20un%20pr%C3%A9stamo%20con%20La%20Casita%20Verde" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Escribir al +502 3998-8424
+      </a>
+      <a class="btn btn-outline" href="#solicitar">Solicitar en línea</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><img src="assets/logo.jpg" alt="La Casita Verde" /></div>
+        <p style="margin-top:1rem;max-width:34ch">La Casita Verde te presta pisto. Financiamiento rápido, transparente y seguro en Santa Rosa y Jutiapa.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <div class="foot-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#a8e05a"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          <a href="https://wa.me/50239988424" target="_blank" rel="noopener">+502 3998-8424</a>
+        </div>
+        <div class="foot-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#a8e05a"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+          <a href="https://www.facebook.com/profile.php?id=61569622786414" target="_blank" rel="noopener">Síguenos en Facebook</a>
+        </div>
+        <div class="foot-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8e05a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+          <a href="https://lacasitaverde.gt" target="_blank" rel="noopener">www.lacasitaverde.gt</a>
+        </div>
+      </div>
+      <div>
+        <h4>Préstamos</h4>
+        <p><a href="#prestamos">Hipotecario</a></p>
+        <p><a href="#prestamos">Remodelación</a></p>
+        <p><a href="#prestamos">Segunda vivienda</a></p>
+        <p><a href="#prestamos">Liquidez</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>&copy; <span id="year"></span> La Casita Verde · Te presta pisto. Todos los derechos reservados.</p>
+      <p>La aprobación de los préstamos está sujeta a evaluación. Los montos, plazos y condiciones se confirman directamente con un asesor. La Casita Verde es un proyecto respaldado por Lift.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/50239988424?text=Hola%2C%20me%20interesa%20un%20pr%C3%A9stamo%20de%20La%20Casita%20Verde" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){ links.classList.toggle('open'); });
+  links.addEventListener('click', function(e){ if(e.target.tagName==='A') links.classList.remove('open'); });
+
+  // Form -> WhatsApp
+  var WA_NUMBER = '50239988424';
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre = document.getElementById('nombre').value.trim();
+    var tel = document.getElementById('telefono').value.trim();
+    var monto = document.getElementById('monto').value.trim();
+    var ubic = document.getElementById('ubicacion').value;
+    var msg = '¡Hola La Casita Verde! 🏡 Quiero solicitar un préstamo.\n\n'
+            + '👤 Nombre: ' + nombre + '\n'
+            + '📞 Teléfono: ' + tel + '\n'
+            + (monto ? '💵 Monto: ' + monto + '\n' : '')
+            + (ubic ? '📍 Municipio: ' + ubic + '\n' : '');
+    var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  });
+</script>
+</body>
+</html>
