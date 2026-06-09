@@ -173,6 +173,40 @@
   .foot-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
   .legal{border-top:1px solid rgba(255,255,255,.15);padding-top:1.4rem;font-size:.8rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.6}
 
+  /* Simulador de cuota */
+  .sim{background:linear-gradient(160deg,var(--green-800),var(--green-700))}
+  .sim .section-head h2{color:#fff}
+  .sim .section-head p{color:rgba(255,255,255,.9)}
+  .sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3.5vw,2.4rem);max-width:1000px;margin:0 auto;align-items:stretch}
+  .sim-panel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:clamp(1.5rem,3vw,2.1rem);backdrop-filter:blur(6px)}
+  .sim-panel.result{background:#fff;display:flex;flex-direction:column}
+  .sim label{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--lime-bright);margin-bottom:.55rem}
+  .sim-amount{width:100%;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.5rem,4vw,2rem);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:.5rem .85rem;margin-bottom:1rem}
+  .sim-amount:focus{outline:2px solid var(--lime-bright);border-color:transparent}
+  .sim-range{width:100%;accent-color:var(--lime-bright);cursor:pointer}
+  .sim-ticks{display:flex;justify-content:space-between;color:rgba(255,255,255,.75);font-size:.74rem;font-weight:600;margin-top:.35rem}
+  .sim-terms{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+  .sim-term{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:.55rem .2rem;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+  .sim-term:hover{border-color:var(--lime-bright)}
+  .sim-term.active{background:var(--lime-bright);color:var(--green-900);border-color:var(--lime-bright)}
+  .sim-rate-val{font-family:'Poppins';font-weight:800;color:var(--lime-bright)}
+  .sim-result-main{text-align:center;padding-bottom:1.1rem;border-bottom:1px solid var(--line);margin-bottom:1rem}
+  .sim-result-main .k{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .sim-result-main .cuota{font-family:'Poppins';font-weight:800;font-size:clamp(2.2rem,6vw,3rem);color:var(--green-700);line-height:1.05;margin-top:.2rem}
+  .sim-result-main .per{font-size:.9rem;color:var(--muted)}
+  .sim-out-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.48rem 0;color:var(--ink);font-size:.95rem}
+  .sim-out-row b{font-family:'Poppins';font-weight:700;color:var(--green-800)}
+  .sim-panel.result .btn{width:100%;margin-top:1rem}
+  .sim-note{font-size:.76rem;color:var(--muted);margin-top:.8rem;line-height:1.5;text-align:center}
+  /* Respaldo band */
+  .respaldo{background:var(--green-900);color:#fff;text-align:center}
+  .respaldo .wrap{max-width:780px}
+  .respaldo h2{font-family:'Poppins';font-weight:800;font-size:clamp(1.5rem,3.5vw,2.1rem);margin:.5rem 0 .8rem}
+  .respaldo p{color:rgba(255,255,255,.88);margin-bottom:1.7rem}
+  .respaldo-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem 2.6rem}
+  .respaldo-stats .n{font-family:'Poppins';font-weight:800;font-size:clamp(1.7rem,4vw,2.1rem);color:var(--lime-bright);line-height:1}
+  .respaldo-stats .t{font-size:.9rem;color:rgba(255,255,255,.85);margin-top:.2rem}
+
   /* Floating WhatsApp */
   .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#25d366;color:#fff;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.8);transition:transform .15s}
   .wa-float:hover{transform:scale(1.08)}
@@ -186,6 +220,7 @@
     .step{margin-top:14px}
     .cov-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
+    .sim-grid{grid-template-columns:1fr}
   }
   @media(max-width:640px){
     .nav-links{display:none}
@@ -211,6 +246,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#beneficios">Beneficios</a>
       <a href="#prestamos">Préstamos</a>
+      <a href="#simulador">Simulador</a>
       <a href="#como">Cómo funciona</a>
       <a href="#cobertura">Cobertura</a>
       <a href="#solicitar">Solicitar</a>
@@ -367,6 +403,53 @@
   </div>
 </section>
 
+<!-- SIMULADOR DE CUOTA -->
+<section class="sim" id="simulador">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--lime-bright)">Calculá sin compromiso</span>
+      <h2>Simulá la cuota de tu préstamo</h2>
+      <p>Movés el monto y el plazo y mirás al instante una estimación de tu cuota mensual. Así llegás con una idea clara antes de hablar con nosotros.</p>
+    </div>
+    <div class="sim-grid">
+      <div class="sim-panel">
+        <label for="cMonto">¿Cuánto necesitás? (Q)</label>
+        <input id="cMonto" class="sim-amount" type="number" min="350000" step="50000" value="500000" aria-label="Monto del préstamo en quetzales" />
+        <input id="cRange" class="sim-range" type="range" min="350000" max="5000000" step="50000" value="500000" aria-label="Ajustar monto del préstamo" />
+        <div class="sim-ticks"><span>Q350K</span><span>Q2.5M</span><span>Q5M</span></div>
+
+        <label for="cPlazo" style="margin-top:1.4rem">Plazo</label>
+        <div class="sim-terms" id="cPlazo">
+          <button type="button" class="sim-term" data-y="5">5 años</button>
+          <button type="button" class="sim-term active" data-y="10">10 años</button>
+          <button type="button" class="sim-term" data-y="15">15 años</button>
+          <button type="button" class="sim-term" data-y="20">20 años</button>
+        </div>
+
+        <label for="cTasa" style="margin-top:1.4rem">Tasa anual de referencia · <span class="sim-rate-val" id="cTasaVal">12%</span></label>
+        <input id="cTasa" class="sim-range" type="range" min="8" max="18" step="0.5" value="12" aria-label="Tasa anual de referencia" />
+        <div class="sim-ticks"><span>8%</span><span>13%</span><span>18%</span></div>
+      </div>
+
+      <div class="sim-panel result">
+        <div class="sim-result-main">
+          <div class="k">Cuota mensual estimada</div>
+          <div class="cuota" id="cCuota">Q0</div>
+          <div class="per">durante <span id="cMeses">120</span> meses</div>
+        </div>
+        <div class="sim-out-row"><span>Monto del préstamo</span><b id="cOutMonto">Q500,000</b></div>
+        <div class="sim-out-row"><span>Total estimado a pagar</span><b id="cTotal">Q0</b></div>
+        <div class="sim-out-row"><span>Intereses estimados</span><b id="cInteres">Q0</b></div>
+        <a id="cWa" class="btn btn-wa" href="https://wa.me/50239988424" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Solicitar con estos datos
+        </a>
+        <p class="sim-note">Cálculo referencial con amortización fija (sistema francés). La tasa, el plazo y la cuota final se confirman con un asesor según tu evaluación. No constituye una oferta de crédito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section id="como">
   <div class="wrap">
@@ -420,6 +503,20 @@
       <hr />
       <div class="big">100%</div>
       <div class="lbl">Trato transparente y seguro</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPALDO LIFT -->
+<section class="respaldo" id="respaldo">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--lime-bright)">Respaldo y confianza</span>
+    <h2>Un proyecto respaldado por Lift</h2>
+    <p>La Casita Verde es parte del grupo financiero Lift, con más de dos décadas estructurando soluciones de financiamiento e inversión. Esa trayectoria es la que respalda cada préstamo que otorgamos.</p>
+    <div class="respaldo-stats">
+      <div><div class="n">+20</div><div class="t">años de experiencia del grupo</div></div>
+      <div><div class="n">+US$350M</div><div class="t">en operaciones financieras</div></div>
+      <div><div class="n">+3,000</div><div class="t">transacciones realizadas</div></div>
     </div>
   </div>
 </section>
@@ -505,6 +602,48 @@
     var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   });
+
+  // Simulador de cuota
+  (function(){
+    var monto=document.getElementById('cMonto'),
+        range=document.getElementById('cRange'),
+        tasa=document.getElementById('cTasa'),
+        years=10;
+    if(!monto||!range||!tasa) return;
+    function q(n){return 'Q'+Math.round(n).toLocaleString('en-US');}
+    function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+    function calc(){
+      var P=Math.max(0,+monto.value||0);
+      var annual=+tasa.value||0;
+      var n=years*12;
+      var r=annual/100/12;
+      var cuota = r>0 ? P*r/(1-Math.pow(1+r,-n)) : P/n;
+      var total=cuota*n;
+      setTxt('cTasaVal',annual+'%');
+      setTxt('cMeses',n);
+      setTxt('cCuota',q(cuota));
+      setTxt('cOutMonto',q(P));
+      setTxt('cTotal',q(total));
+      setTxt('cInteres',q(total-P));
+      var msg='¡Hola La Casita Verde! 🏡 Simulé un préstamo y quiero más información.\n\n'
+            +'💵 Monto: '+q(P)+'\n'
+            +'📅 Plazo: '+years+' años ('+n+' meses)\n'
+            +'🧮 Cuota mensual estimada: '+q(cuota)+'\n'
+            +'(tasa referencial '+annual+'%)';
+      var wa=document.getElementById('cWa');
+      if(wa) wa.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+    }
+    monto.addEventListener('input',function(){range.value=Math.min(5000000,Math.max(350000,+monto.value||350000));calc();});
+    range.addEventListener('input',function(){monto.value=range.value;calc();});
+    tasa.addEventListener('input',calc);
+    document.querySelectorAll('#cPlazo .sim-term').forEach(function(b){
+      b.addEventListener('click',function(){
+        document.querySelectorAll('#cPlazo .sim-term').forEach(function(x){x.classList.remove('active')});
+        b.classList.add('active');years=+b.getAttribute('data-y')||10;calc();
+      });
+    });
+    calc();
+  })();
 </script>
 </body>
 </html>
