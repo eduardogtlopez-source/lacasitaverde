@@ -51,6 +51,34 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+
+  /* ── ACCESIBILIDAD ── */
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline:3px solid var(--green-700);
+    outline-offset:2px;
+    border-radius:6px;
+  }
+  .skip-link{
+    position:absolute; left:-9999px; top:0; z-index:9999;
+    background:var(--green-700); color:#fff;
+    padding:12px 20px; border-radius:0 0 10px 0;
+    font-weight:700; font-size:.95rem;
+  }
+  .skip-link:focus{ left:0; }
+  .sr-only{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+    }
+  }
   body{
     font-family:'Inter',system-ui,sans-serif;
     color:var(--ink);
@@ -200,7 +228,7 @@
   .sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3.5vw,2.4rem);max-width:1000px;margin:0 auto;align-items:stretch}
   .sim-panel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:clamp(1.5rem,3vw,2.1rem);backdrop-filter:blur(6px)}
   .sim-panel.result{background:#fff;display:flex;flex-direction:column}
-  .sim label{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--lime-bright);margin-bottom:.55rem}
+  .sim label,.sim .sim-label{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--lime-bright);margin-bottom:.55rem}
   .sim-amount{width:100%;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.5rem,4vw,2rem);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:.5rem .85rem;margin-bottom:1rem}
   .sim-amount:focus{outline:2px solid var(--lime-bright);border-color:transparent}
   .sim-range{width:100%;accent-color:var(--lime-bright);cursor:pointer}
@@ -257,6 +285,8 @@
 </head>
 <body>
 
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
@@ -280,6 +310,8 @@
     </div>
   </div>
 </header>
+
+<main>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -438,8 +470,8 @@
         <input id="cRange" class="sim-range" type="range" min="350000" max="5000000" step="50000" value="500000" aria-label="Ajustar monto del préstamo" />
         <div class="sim-ticks"><span>Q350K</span><span>Q2.5M</span><span>Q5M</span></div>
 
-        <label for="cPlazo" style="margin-top:1.4rem">Plazo</label>
-        <div class="sim-terms" id="cPlazo">
+        <span class="sim-label" id="cPlazoLbl" style="margin-top:1.4rem">Plazo</span>
+        <div class="sim-terms" id="cPlazo" role="group" aria-labelledby="cPlazoLbl">
           <button type="button" class="sim-term" data-y="5">5 años</button>
           <button type="button" class="sim-term active" data-y="10">10 años</button>
           <button type="button" class="sim-term" data-y="15">15 años</button>
@@ -555,6 +587,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
